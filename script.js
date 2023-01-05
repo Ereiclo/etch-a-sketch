@@ -13,7 +13,25 @@ function clearGrid(){
 
 function colorBorder(e){
     // this.classList.add('hover-block');
-    this.style.backgroundColor = 'black';
+    // this.style.backgroundColor = 'black';
+
+    if(this.color){
+
+        this.color = this.color.darken(10);
+
+        this.style.backgroundColor = this.color.toString();
+        // console.log(this.color);
+    }
+    else{
+        let color = '#' + Math.floor(Math.random()*16777215).toString(16);
+
+        this.color = tinycolor(color);
+
+        this.style.backgroundColor = color;
+
+        
+        // this.style.backgroundColor = this.color.toString();
+    }
 }
 
 function uncolorBorder(e){
